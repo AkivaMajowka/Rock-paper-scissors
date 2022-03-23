@@ -13,23 +13,45 @@ function computerPlay() {
 //Checks who is the winnner between user and computer
 function playRound(playerSelection, computerSelection) {
   let result;
+
   if (
     (playerSelection == "scissors" && computerSelection == "paper") ||
     (playerSelection == "rock" && computerSelection == "scissors") ||
     (playerSelection == "paper" && computerSelection == "rock")
   ) {
-    result = `User win! ${playerSelection} is stronger then ${computerSelection}!`;
+    result = "user";
   } else if (playerSelection == computerSelection) {
-    result = "no winner";
+    result = "tie";
   } else {
-    result = `Computer win! ${computerSelection} is stronger then ${playerSelection}!`;
+    result = "computer";
   }
   return result;
 }
 
-//testing with hard data
-let playerSelection = "scissors";
-let computerSelection = "paper";
+function game() {
+  let userPoints = 0;
+  let computerPoints = 0;
 
-let gameResult = playRound(playerSelection, computerSelection);
-console.log(gameResult)
+  for (let i = 1; i < 5; i++) {
+    let playerSelection = prompt("Whats your play?", " ").toLowerCase;
+    let computerSelection = computerPlay();
+    let winner = playRound(playerSelection, computerSelection);
+
+    winner == "user"
+      ? userPoints++
+      : winner == "computer"
+      ? computerPoints++
+      : console.log("We have a tie!");
+    console.log(`computer: ${computerPoints}, you: ${userPoints}`);
+  }
+
+  let gameWinner =
+    userPoints > computerPoints
+      ? "You won, congradulations!"
+      : computerPoints > userPoints
+      ? "The Computer won, best of luck next time"
+      : "The game finished as a tie!";
+  console.log(gameWinner);
+}
+
+game();
