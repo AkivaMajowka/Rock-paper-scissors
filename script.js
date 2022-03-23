@@ -1,7 +1,9 @@
+//Gets random number
 function getRandomInt(max) {
     return Math.floor(Math.random() * max);
   }
 
+  //Gets a string contaning a random play(rock, scissors or paper)
 function computerPlay(){
   let rNumber;
   rNumber = getRandomInt(3)
@@ -10,6 +12,7 @@ function computerPlay(){
          : "rock"
 }
 
+//Checks who is the winnner between user and computer
 function playRound(playerSelection, computerSelection) {
   let result;
   if ( ((playerSelection == "scissors") && (computerSelection == "paper")) ||
@@ -23,6 +26,7 @@ function playRound(playerSelection, computerSelection) {
       return result;
 }
 
+//testing with hard inserted data
 let playerSelection = "scissors";
 let computerSelection = "paper";
 
