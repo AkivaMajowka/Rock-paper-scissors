@@ -18,11 +18,13 @@ function playRound(playerSelection, computerSelection) {
   if ( ((playerSelection == "scissors") && (computerSelection == "paper")) ||
         ((playerSelection == "rock") && (computerSelection == "scissors")) ||
         ((playerSelection == "paper") && (computerSelection == "rock")) )
-        {result = `User win! ${playerSelection} is stronger then ${computerSelection}!`}
+      {result = `User win! ${playerSelection} is stronger then ${computerSelection}!`}
 
   elseif (playerSelection == computerSelection); {
           result = "no winner"
-      } 
+      } else {
+        result = `Computer win! ${computerSelection} is stronger then ${playerSelection}!`
+      }
       return result;
 }
 
