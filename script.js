@@ -5,27 +5,24 @@ function getRandomInt(max) {
 
 //Gets a string contaning a random play(rock, scissors or paper)
 function computerPlay() {
-  let rNumber;
-  rNumber = getRandomInt(3);
-  return rNumber == 0 ? "scissors" : rNumber == 1 ? "paper" : "rock";
+  let randomNumber;
+  randomNumber = getRandomInt(3);
+  return randomNumber == 0 ? "scissors" : randomNumber == 1 ? "paper" : "rock";
 }
 
 //Checks who is the winnner between user and computer
 function playRound(playerSelection, computerSelection) {
-  let result;
-
   if (
     (playerSelection == "scissors" && computerSelection == "paper") ||
     (playerSelection == "rock" && computerSelection == "scissors") ||
     (playerSelection == "paper" && computerSelection == "rock")
   ) {
-    result = "user";
-  } else if (playerSelection == computerSelection) {
-    result = "tie";
-  } else {
-    result = "computer";
+    return "user";
   }
-  return result;
+  if (playerSelection == computerSelection) {
+    return "tie";
+  }
+  return "computer";
 }
 
 function game() {
@@ -33,25 +30,37 @@ function game() {
   let computerPoints = 0;
 
   for (let i = 1; i < 5; i++) {
-    let playerSelection = prompt("Whats your play?", " ").toLowerCase;
+    let playerSelection = prompt("Whats your play?", " ").toLowerCase();
     let computerSelection = computerPlay();
     let winner = playRound(playerSelection, computerSelection);
 
-    winner == "user"
-      ? userPoints++
-      : winner == "computer"
-      ? computerPoints++
-      : console.log("We have a tie!");
+    if (winner == "user") {
+      console.log('you won this round!')
+      userPoints++;
+    } else if (winner == "computer") {
+      console.log('you lost this round!')
+      computerPoints++;
+    } else if (winner == 'tie'){
+      console.log("We have a tie!");
+      continue;
+    } else {
+      console.log("Please choose Rock, Paper or Scissors");
+      i--
+    }
     console.log(`computer: ${computerPoints}, you: ${userPoints}`);
   }
 
-  let gameWinner =
-    userPoints > computerPoints
-      ? "You won, congradulations!"
-      : computerPoints > userPoints
-      ? "The Computer won, best of luck next time"
-      : "The game finished as a tie!";
-  console.log(gameWinner);
+    let gameWinner;
+
+    if (userPoints > computerPoints) {
+      gameWinner = "You won, congradulations!";
+    } else if (computerPoints > userPoints) {
+      gameWinner = "The Computer won, best of luck next time";
+    } else {
+      gameWinner = "The game finished as a tie!";
+    }
+    console.log(gameWinner);
+  
 }
 
 game();
