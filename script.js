@@ -63,4 +63,5 @@ function game() {
   
 }
 
-game();
+console.log(document.querySelector(".display-text")?.textContent)
+
