@@ -8,30 +8,50 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    
     <div class="wrap">
         <div class="title">
             <h1>Rock Paper Scissors</h1>
         </div>
         <div class="game-zone">
+            <div class="full-display">
+                <a href="" class="start-button">> Start Game <</a>
+            </div>
+            <div class="points">
+                <div>
+                    <p>You: </p>
+                    <p class="user-points">0</p>
+                </div>
+                <div>
+                    <p>Computer: </p>
+                    <p class="system-points">0</p>
+                </div>
+            </div>
             <div class="user-selection-div">
                 <h3 class="play">Select your play!</h3>
                 <div class="buttons">
-                    <button data-key="rock" class="button-selector">Rock</button>
-                    <button data-key="paper" class="button-selector">Paper</button>
-                    <button data-key="scissors" class="button-selector">Scissors</button>
+                    <button  class="rock button-selector">Rock</button>
+                    <button  class="paper button-selector">Paper</button>
+                    <button  class="scissors button-selector">Scissors</button>
                 </div>
             </div>
             <div class="display-selections">
-                <p class="display-text">hey</p>
+                <div class="user-selection-display">
+                    <p>You Selected:</p>
+                    <p></p>
+                </div>
+                <div class="system-selection-display">
+                    <p>Computer Selected:</p>
+                    <p></p>
+                </div>
             </div>
-            <div class="points"></div>
+            <div class="round-winner-display">
+                <p>Round winner:</p>
+                <p class="round-winner"></p>
+            </div>
         </div>
     </div>
-    <div class="display-text">
-        helooo
-        
-      </div>
-      <script src="./script.js"></script>
-
+    <div class="display-text"></div>
+    <script src="./script.js"></script>
 </body>
 </html>

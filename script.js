@@ -10,6 +10,22 @@ function computerPlay() {
   return randomNumber == 0 ? "scissors" : randomNumber == 1 ? "paper" : "rock";
 }
 
+// getting players round play
+function UserSelection() {
+  let rock = document.querySelector(".rock")
+  rock.addEventListener('click', SetPlayerSelection)
+  
+  let paper = document.querySelector(".paper")
+  paper.addEventListener('click', SetPlayerSelection)
+
+  let scissors = document.querySelector(".scissors")
+  scissors.addEventListener('click', SetPlayerSelection)
+}
+
+function SetPlayerSelection(e) {
+   playerSelection =  e.target.innerText
+}  
+
 //Checks who is the winnner between user and computer
 function playRound(playerSelection, computerSelection) {
   if (
@@ -25,13 +41,14 @@ function playRound(playerSelection, computerSelection) {
   return "computer";
 }
 
-function game() {
+function logic() {
   let userPoints = 0;
   let computerPoints = 0;
 
+  window.playerSelection = null;
+  let computerSelection = computerPlay();
+
   for (let i = 1; i < 5; i++) {
-    let playerSelection = prompt("Whats your play?", " ").toLowerCase();
-    let computerSelection = computerPlay();
     let winner = playRound(playerSelection, computerSelection);
 
     if (winner == "user") {
@@ -63,5 +80,20 @@ function game() {
   
 }
 
-console.log(document.querySelector(".display-text")?.textContent)
+game()
 
+
+// botao iniciar mostra o jogo
+// elementos DOM sao aplicados a variaveis, 
+
+// rodada comeca com a escolha de jogada do jogador
+// escolhe um valor "pedra papel ou tesoura" de forma aleatoria pra o jogo,
+// verifica o vencedor //  vencedor eh salvo em sua variavel adicionando um numero
+// mostra na tela a escolha do jogador contra a do jogo, e abaixo quem vence a rodada
+
+// um teste eh feito para verificar se um dos jogadores tem cinco pontos 
+// se sim, o jogo anuncia ele como vencedor 
+// se nao, o jogo prossegue pro proximo passo
+
+// atualiza os pontos apresentados 
+// devolve a tela de escolha de jogada
