@@ -84,6 +84,10 @@
     font-size: 25px;
 }
 
+.yellow-text {
+    color: yellow;
+}
+
 .button-selector {
     background-color: white;
     color: black;
