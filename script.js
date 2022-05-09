@@ -44,7 +44,7 @@ function playRound(e) {
   } else if (winner === 'system') {
     displayRoundWinner.innerText = 'Computer Won!'
     systemPoints++
-    displaySystemPoints.innerText = playerPoints
+    displaySystemPoints.innerText = systemPoints
   } else {
     displayRoundWinner.innerText = 'Its a tie!!'
   }
@@ -60,14 +60,14 @@ function playRound(e) {
     displayPlayerPoints.innerText = 0
     displaySystemPoints.innerText = 0
   } else if (systemPoints === 5) {
-    alert('computer won the game!')
-    displayUserSelection.innerText = ''
-    displaySystemSelection.innerText = ''
-    displayRoundWinner.innerText = ''
-    playerPoints = 0
-    systemPoints = 0
-    displayPlayerPoints.innerText = 0
-    displaySystemPoints.innerText = 0
+      alert('computer won the game!')
+      displayUserSelection.innerText = ''
+      displaySystemSelection.innerText = ''
+      displayRoundWinner.innerText = ''
+      playerPoints = 0
+      systemPoints = 0
+      displayPlayerPoints.innerText = 0
+      displaySystemPoints.innerText = 0
   }
 }
 
