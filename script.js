@@ -25,7 +25,7 @@ function roundWinner(playerPlay, systemPlay) {
 }
 
 function cleanUp() {
-  displayUserSelection.innerText = "";
+  displayPlayerSelection.innerText = "";
   displaySystemSelection.innerText = "";
   displayRoundWinner.innerText = "";
   playerPoints = 0;
@@ -37,18 +37,18 @@ function cleanUp() {
 function playRound(e) {
   let playerPlay = e.target.innerText;
   let systemPlay = computerPlay();
-  let displayUserSelection = document.querySelector(".user-selection-display");
-  let displaySystemSelection = document.querySelector(
+  displayPlayerSelection = document.querySelector(".user-selection-display");
+  displaySystemSelection = document.querySelector(
     ".system-selection-display"
   );
-  let displayRoundWinner = document.querySelector(".round-winner");
-  let displayPlayerPoints = document.querySelector(".user-points");
-  let displaySystemPoints = document.querySelector(".system-points");
+  displayRoundWinner = document.querySelector(".round-winner");
+  displayPlayerPoints = document.querySelector(".user-points");
+  displaySystemPoints = document.querySelector(".system-points");
 
   let winner = roundWinner(playerPlay, systemPlay);
 
   //displays players and systems play
-  displayUserSelection.innerText = playerPlay;
+  displayPlayerSelection.innerText = playerPlay;
   displaySystemSelection.innerText = systemPlay;
 
   if (winner === "player") {
@@ -63,7 +63,6 @@ function playRound(e) {
     displayRoundWinner.innerText = "Its a tie!!";
   }
 
-  let gameWinner;
   if (playerPoints === 5) {
     alert("you won the game!");
     cleanUp();
