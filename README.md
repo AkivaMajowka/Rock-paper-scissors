@@ -1,5 +1,6 @@
-#THE ODIN PROJECT
+#Rock Paper Scissors
 
-Project #2 | Rock Paper Scissors<br>
-Skills tested: JavaScript, DOM
+The known game Rock Paper Scissors 
+
+Stack: HTML CSS JavaScript
 
