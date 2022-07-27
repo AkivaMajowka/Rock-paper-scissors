@@ -1,4 +1,4 @@
-#Rock Paper Scissors
+#Rock-Paper-Scissors
 
 The known game Rock Paper Scissors 
 
